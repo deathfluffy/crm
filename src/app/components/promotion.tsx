@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { Promotion } from '@/lib/api';
+import type { Promotion as PromotionType } from '@/lib/api';
 
 export interface PromotionProps {
-  promotion: Promotion;
+  promotion: PromotionType;
 }
 
-export default function Promotion({ promotion }: PromotionProps) {
+const Promotion: React.FC<PromotionProps> = ({ promotion }) => {
   return (
     <div className="rounded overflow-hidden	bg-gray-100">
       <div className="relative w-full h-40 bg-gray-300">
@@ -26,4 +26,6 @@ export default function Promotion({ promotion }: PromotionProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Promotion;
